@@ -10,6 +10,10 @@ require("./db/conn");
 
 const port = 3000;
 
+const userRoutes = require("./routes");
+
+app.use("/users", userRoutes);
+
 app.listen(port, async () => {
     console.log(`O servidor iniciou na porta ${port}`);
 });

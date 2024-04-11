@@ -1,16 +1,5 @@
-const { text } = require("express");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
-const typeUserSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-    },
-    ativo: {
-        type: Boolean,
-    }
-});
 
 const UserSchema = new Schema({
     nome: {
@@ -34,9 +23,11 @@ const UserSchema = new Schema({
         required: true,
     },
     type: {
-        type: typeUserSchema,
+        type: String,
         required: true,
     }
     },
     { timestamps: true }
 );
+
+module.exports = mongoose.model("User", UserSchema);
