@@ -6,9 +6,10 @@ mongoose.set("strictQuery", true);
 
 async function main() {
     await mongoose.connect(
-
+        `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.f382yw3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
     );
-    console.log("Conectado com sucesso");
+
+    console.log("Conectado com sucesso!");
 };
 
 main().catch((err) => console.log(err));
